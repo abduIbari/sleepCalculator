@@ -12,24 +12,22 @@ if (!$data) {
 $hours = $data["hours"];
 $minutes = $data["minutes"];
 
-function calculateBedTime($cycle, $hours, $minutes){
-  $removedHours = floor($cycle * 1.5);
-  $removedMinutes = (($cycle * 1.5) - $removedHours) * 60;
+function calculateTime($cycle, $hours, $minutes){
+  $addedHours = floor($cycle * 1.5);
+  $addedMinutes = (($cycle * 1.5) - $addedHours) * 60;
 
-  $calculatedHours = $hours - $removedHours;
-  print($calculatedHours);
-  $calculatedMinutes = $minutes - $removedMinutes - 15;
-  
-  if ($calculatedHours < 0) {
-    $calculatedHours = 24 + $calculatedHours;
-  }
+  $calculatedHours = $hours + $addedHours;
+  $calculatedMinutes = $minutes + $addedMinutes + 15;
 
-  if ($calculatedMinutes < 0) {
+  if ($calculatedMinutes > 59) {
     $extraHours = floor($calculatedMinutes / 60);
-    $calculatedMinutes = 60 + $calculatedMinutes;
+    $calculatedMinutes = $calculatedMinutes % 60;
     $calculatedHours += $extraHours;
   }
 
+  if ($calculatedHours > 23) {
+    $calculatedHours = $calculatedHours % 24;
+  }
 
   return [
     'hours' => $calculatedHours,
@@ -39,7 +37,7 @@ function calculateBedTime($cycle, $hours, $minutes){
 
 $results = [];
 for ($cycle = 1; $cycle <= 6; $cycle++) {
-  $time = calculateBedTime($cycle, $hours, $minutes);
+  $time = calculateTime($cycle, $hours, $minutes);
   $formattedTime = sprintf("%02d:%02d", $time['hours'], $time['minutes']);
   $results["cycle $cycle"] = $formattedTime;
 }

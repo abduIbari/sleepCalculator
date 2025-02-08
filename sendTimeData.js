@@ -27,5 +27,14 @@ function calculateBedtime(hours, minutes){
       console.log(`${cycle}: ${time}`);
     }
   })
-
 }
+
+
+let currentTime = new Date();
+console.log(currentTime);
+let hours = currentTime.getHours();
+let minutes = currentTime.getMinutes();
+let seconds = currentTime.getSeconds();
+console.log(hours);
+console.log(minutes);
+console.log(seconds);
