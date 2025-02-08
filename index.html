@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sleep Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="timerClock.js" defer></script>
+  <script src="bedTime.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Sleep Calculator</h1>
+  </header>
+  <div class="container">
+    <div class="timer-container">
+      <p>What time do you want to wake up?</p>
+      <div class="timer">
+        <div class="hours-container">
+            <div class="hr-up"></div>
+            <input type="number" id="hours" class="hours" value="06">
+            <div class="hr-down"></div>
+        </div>
+        <div class="minutes-container">
+            <div class="min-up"></div>
+            <input type="number" id="minutes" class="minutes" value="30">
+            <div class="min-down"></div>
+        </div>
+    </div>
+      <button id="bedTime">Calculate bedtime</button>
+    </div>
+
+    <div class="wakeup-container">
+      <p>If you want to go to bed now...</p>
+      <button id="wakeupTime">Calculate wake-up time</button>
+    </div>
+  </div>
+
+</body>
+
+</html>
