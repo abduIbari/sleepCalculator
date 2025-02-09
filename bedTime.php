@@ -17,7 +17,6 @@ function calculateBedTime($cycle, $hours, $minutes){
   $removedMinutes = (($cycle * 1.5) - $removedHours) * 60;
 
   $calculatedHours = $hours - $removedHours;
-  print($calculatedHours);
   $calculatedMinutes = $minutes - $removedMinutes - 15;
   
   if ($calculatedHours < 0) {
