@@ -42,6 +42,11 @@ function calculateBedtime(hours, minutes){
     <button id="goBack">Go back</button>
   </div>
 `;
+
+  const goBackBtn = document.getElementById("goBack")
+  goBackBtn.addEventListener("click", () => {
+  window.location.href = "index.html"
+  })
   })
 }
 
@@ -85,5 +90,12 @@ function calculateWakeupTime(hours, minutes){
     <button id="goBack">Go back</button>
   </div>
 `;
+
+  const goBackBtn = document.getElementById("goBack")
+  goBackBtn.addEventListener("click", () => {
+    window.location.href = "index.html"
+  })
+
   })
 }
+
