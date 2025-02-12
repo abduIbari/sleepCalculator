@@ -24,9 +24,8 @@ function calculateBedTime($cycle, $hours, $minutes){
   }
 
   if ($calculatedMinutes < 0) {
-    $extraHours = floor($calculatedMinutes / 60);
-    $calculatedMinutes = 60 + $calculatedMinutes;
-    $calculatedHours += $extraHours;
+    $calculatedMinutes += 60;  // Wrap the minutes around.
+    $calculatedHours -= 1;     // Decrease one hour.
   }
 
 
