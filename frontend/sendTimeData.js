@@ -21,9 +21,6 @@ function calculateBedtime(hours, minutes) {
   })
     .then((response) => response.json())
     .then((data) => {
-      for (const [cycle, time] of Object.entries(data)) {
-        console.log(`${cycle}: ${time}`);
-      }
       let dataContainer = document.querySelector(".container");
 
       dataContainer.style.opacity = "0";
@@ -50,14 +47,12 @@ function calculateBedtime(hours, minutes) {
     `;
         dataContainer.style.opacity = "1";
 
-        // Reattach goBack button event listener
         document.getElementById("goBack").addEventListener("click", () => {
-          // Fade-out before redirecting
           dataContainer.style.opacity = "0";
 
           setTimeout(() => {
-            window.location.href = "index.html"; // Navigate after fade-out
-          }, 200); // Match the fade-out duration
+            window.location.href = "index.html"; 
+          }, 200); 
         });
       }, 200);
     });
@@ -82,9 +77,6 @@ function calculateWakeupTime(hours, minutes) {
   })
     .then((response) => response.json())
     .then((data) => {
-      for (const [cycle, time] of Object.entries(data)) {
-        console.log(`${cycle}: ${time}`);
-      }
       let dataContainer = document.querySelector(".container");
 
       dataContainer.style.opacity = "0";
@@ -111,14 +103,12 @@ function calculateWakeupTime(hours, minutes) {
   `;
         dataContainer.style.opacity = "1";
 
-        // Reattach goBack button event listener
         document.getElementById("goBack").addEventListener("click", () => {
-          // Fade-out before redirecting
           dataContainer.style.opacity = "0";
 
           setTimeout(() => {
-            window.location.href = "index.html"; // Navigate after fade-out
-          }, 200); // Match the fade-out duration
+            window.location.href = "index.html"; 
+          }, 200); 
         });
       }, 200);
     });

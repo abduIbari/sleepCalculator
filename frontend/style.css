@@ -36,6 +36,24 @@ p {
   text-align: center;
 }
 
+button {
+  width: 100%;
+  height: 60px;
+  font-size: 1.3rem;
+  border-radius: 12px;
+  background-color: #e1d8a8;
+  color: black;
+  box-shadow: 5px 5px 20px -5px rgba(0, 0, 0, 0.1);
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #e2ddbd;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -74,24 +92,6 @@ p {
   text-align: center;
   outline: none;
   position: relative;
-}
-
-button {
-  width: 100%;
-  height: 60px;
-  font-size: 1.3rem;
-  border-radius: 12px;
-  background-color: #e1d8a8;
-  color: black;
-  box-shadow: 5px 5px 20px -5px rgba(0, 0, 0, 0.1);
-  border: none;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-button:hover {
-  background-color: #e2ddbd;
 }
 
 .hours-container,
