@@ -37,7 +37,7 @@ function calculateBedTime($cycle, $hours, $minutes){
 }
 
 $results = [];
-for ($cycle = 1; $cycle <= 6; $cycle++) {
+for ($cycle = 6; $cycle >= 1; $cycle--) {
   $time = calculateBedTime($cycle, $hours, $minutes);
   $formattedTime = sprintf("%02d:%02d", $time['hours'], $time['minutes']);
   $results["cycle $cycle"] = $formattedTime;
