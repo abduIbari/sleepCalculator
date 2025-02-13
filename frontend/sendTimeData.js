@@ -12,7 +12,7 @@ bedtimeBtn.addEventListener("click", () => {
 });
 
 function calculateBedtime(hours, minutes) {
-  fetch("./bedTime.php", {
+  fetch("../backend/bedTime.php", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -68,7 +68,7 @@ wakeupBtn.addEventListener("click", () => {
 });
 
 function calculateWakeupTime(hours, minutes) {
-  fetch("./wakeupTime.php", {
+  fetch("../backend/wakeupTime.php", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
